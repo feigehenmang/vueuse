@@ -29,7 +29,7 @@ export function onClickOutside<E extends keyof OnClickOutsideEvents = 'pointerdo
     const el = unrefElement(target)
     if (!el)
       return
-
+    // ! composedPath 获取当前事件对象的父级元素集合
     if (el === event.target || event.composedPath().includes(el))
       return
 
